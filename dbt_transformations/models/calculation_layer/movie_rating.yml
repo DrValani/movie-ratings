@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: movie_rating
+    description: Show movie aggregations
+    columns:
+      - name: movie_id
+        tests:
+          - unique
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 3952
+      - name: max_rating
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 5
+      - name: min_rating
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 5
+      - name: average_rating
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 5
