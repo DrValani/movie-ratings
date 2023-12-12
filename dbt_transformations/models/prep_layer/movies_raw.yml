@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: movies_raw
+    description: Used to parse raw dat file into columns
+    columns:
+      - name: movie_id
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 6040
+      - name: title
+        tests:
+          - not_null
+      - name: genre
+        tests:
+          - not_null
