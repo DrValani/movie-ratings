@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: ratings_raw
+    description: Used to parse raw dat file into columns
+    columns:
+      - name: user_id
+        description: 'Descriptions added here'
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 6040
+      - name: movie_id
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 3952
+      - name: rating
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 5
+      - name: timestamp
+        tests:
+          - not_null

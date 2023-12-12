@@ -39,15 +39,15 @@ models:
 seeds:
   quote_columns: True
   movies_tech_test:
-    movies:
+    movies_dat:
       +delimiter: "`"
       +column_types:
         raw: text
-    ratings:
+    ratings_dat:
       +delimiter: "`"
       +column_types:
         raw: text
-    users:
+    users_dat:
       +delimiter: "`"
       +column_types:
         raw: text
