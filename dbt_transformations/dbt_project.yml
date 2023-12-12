@@ -35,3 +35,19 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+seeds:
+  quote_columns: True
+  movies_tech_test:
+    movies:
+      +delimiter: "`"
+      +column_types:
+        raw: text
+    ratings:
+      +delimiter: "`"
+      +column_types:
+        raw: text
+    users:
+      +delimiter: "`"
+      +column_types:
+        raw: text
