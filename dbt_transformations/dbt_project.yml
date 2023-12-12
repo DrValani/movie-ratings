@@ -51,3 +51,10 @@ seeds:
       +delimiter: "`"
       +column_types:
         raw: text
+
+vars:
+  unit_tests_config:
+    input_format: "csv"
+    column_separator: "|"
+    line_separator: "\n"
+    type_separator: "::"
