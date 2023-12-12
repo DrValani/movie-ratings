@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: ratings_raw
+  - name: rating
     description: Used to parse raw dat file into columns
     columns:
       - name: user_id

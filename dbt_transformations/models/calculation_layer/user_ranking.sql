@@ -5,6 +5,6 @@ FROM (
         movie_id, 
         rating,
         ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY rating DESC) AS rn
-    FROM {{ ref('ratings_raw')}}
+    FROM {{ ref('rating')}}
 ) ranked
 WHERE rn <= 3

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: users_raw
+  - name: user
     description: Used to parse raw dat file into columns
     columns:
       - name: user_id

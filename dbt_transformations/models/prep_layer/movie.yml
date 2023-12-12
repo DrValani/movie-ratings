@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: movies_raw
+  - name: movie
     description: Used to parse raw dat file into columns
     columns:
       - name: movie_id
