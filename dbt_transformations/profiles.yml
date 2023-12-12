@@ -1,0 +1,14 @@
+movies_tech_test:
+ outputs:
+
+   dev:
+     type: postgres
+     threads: 4
+     host: localhost
+     port: 5432
+     user: postgres
+     pass: postgres
+     dbname: new-day-db
+     schema: public
+
+ target: dev
