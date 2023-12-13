@@ -1,4 +1,7 @@
-### Dependencies
+## Dependencies
+
+* docker
+* python
 
 ## Run a local database
 This project is set up to run against a local postgres database. DBT has been configured to run with the values in 
@@ -7,14 +10,24 @@ the `docker-compose.yml` file. To start the database
 `docker compose up`
 
 ## Set up dbt
-create venv `python -m venv venv`
-activate virtual env `source ./venv/bin/activate`
-install python dependencies  `pip install -r requirements.txt`
-install dbt dependencies `dbt deps`
+In the `dbt_transformations` directory run the following commands to set up the project.
+* create venv `python -m venv venv`
+* activate virtual env `source ./venv/bin/activate`
+* install python dependencies  `pip install -r requirements.txt`
+* install dbt dependencies `dbt deps`
 
 To verify install is correct run `dbt debug` if you see error please contact me. 
 
-### Development steps
+
+## Run the project
+
+Either run `dbt build` this is run `dbt seed` to upload seed files then `dbt run` to create models and `dbt test` to run the tests. 
+
+Models `movie_rating.sql` and `user_ranking.sql` will contain my final solution in the `./models/calculation_layer` folder. 
+
+Unit tests are under the `tests` folder.
+
+## Development steps
 
 * Set up local postgres database for testing. NOTE: this will create a directory in the parent folder
 * Database set up so that it can be created from scratch with minimal manual steps. Avoided having to create db schemas in postgres and just pointed dbt to build on the public schema
@@ -29,3 +42,5 @@ To verify install is correct run `dbt debug` if you see error please contact me.
   - Found zip-codes who format is different to majority of the other data fields eg `92612-3417`. Need to check if this is valid or need to be identified as a data quality issue. (Story on backlog to investigate further)
 
 * Not sure if I need to include movie title and movie genre in the movie_rating model. Will keep it to minimum until requirements are clear.
+
+* Added unit tests
